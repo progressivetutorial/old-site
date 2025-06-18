@@ -52,6 +52,14 @@ header {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+.media-subtext {
+  text-align: center;
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+
 footer {
   background: #4e54c8;
   color: white;
