@@ -1,26 +1,28 @@
-// home.js
-
-document.addEventListener("DOMContentLoaded", () => {
-  const boxes = document.querySelectorAll('.box');
-
-  boxes.forEach((box, index) => {
-    box.style.opacity = 0;
-    box.style.transform = 'translateY(20px)';
-
-    setTimeout(() => {
-      box.style.transition = 'all 0.6s ease-out';
-      box.style.opacity = 1;
-      box.style.transform = 'translateY(0)';
-    }, 100 * index);
+// Smooth scroll for internal links
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
   });
+});
 
-  const imgs = document.querySelectorAll(".gallery img");
-  imgs.forEach((img) => {
-    img.addEventListener("mouseenter", () => {
-      img.style.boxShadow = "0 6px 15px rgba(0,0,0,0.2)";
-    });
-    img.addEventListener("mouseleave", () => {
-      img.style.boxShadow = "0 4px 10px rgba(0,0,0,0.1)";
-    });
+// Navbar active link highlight
+const navLinks = document.querySelectorAll('.nav-links a');
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.forEach(l => l.classList.remove('active'));
+    link.classList.add('active');
   });
+});
+
+// Placeholder for future popup/modal
+window.addEventListener('load', () => {
+  console.log("Page fully loaded. Ready for popup/modal logic.");
+  // You can later show a form or modal here
+  // Example: document.querySelector('.popup').style.display = 'block';
 });
