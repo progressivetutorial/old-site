@@ -68,6 +68,22 @@ body {
   font-weight: 300;
 }
 
+footer {
+  background-color: #f4ece1; /* Light brown shade */
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.95rem;
+  color: #333;
+  margin-top: 3rem;
+  border-top: 1px solid #ddd;
+}
+
+footer p {
+  margin: 0;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
 .why-choose {
   padding: 3rem 1rem;
   text-align: center;
