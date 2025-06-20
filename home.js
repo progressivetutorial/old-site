@@ -1,14 +1,20 @@
-let currentSlide = 0;
-const slides = document.querySelectorAll('.carousel-img');
+const carousel = document.getElementById('carouselTrack');
+const images = carousel.querySelectorAll('.carousel-img');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+
+let currentIndex = 0;
 
 function updateCarousel() {
-  slides.forEach((img, i) => {
-    img.classList.remove('active');
-    if (i === currentSlide) img.classList.add('active');
-  });
+  carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
 }
 
-function moveSlide(direction) {
-  currentSlide = (currentSlide + direction + slides.length) % slides.length;
+prevBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
   updateCarousel();
-}
+});
+
+nextBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % images.length;
+  updateCarousel();
+});
