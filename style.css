@@ -13,7 +13,7 @@ body {
 
 /* Navbar */
 .navbar {
-  background-color: #1d4ed8;
+  background-color: #60a5fa; /* sky blue */
   color: white;
   padding: 0.75rem 1.5rem;
 }
@@ -56,30 +56,32 @@ body {
 
 /* Why Choose Section */
 .why-choose {
-  display: flex;
-  justify-content: center;
   padding: 3rem 1rem;
+  text-align: center;
 }
+.why-choose h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.why-box-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
 .why-box {
   background: #ffffff;
   border-radius: 12px;
-  padding: 2rem;
-  max-width: 800px;
+  padding: 1.5rem;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-}
-.why-box h3 {
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-.why-box .subtitle {
-  font-size: 1rem;
-  color: #4b5563;
-  margin-bottom: 1rem;
+  text-align: left;
 }
 .why-box p {
   font-size: 0.95rem;
-  margin-bottom: 1rem;
   color: #333;
 }
 
@@ -90,4 +92,15 @@ footer {
   padding: 1.5rem 1rem;
   font-size: 0.9rem;
   color: #333;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .why-box-wrapper {
+    flex-direction: column;
+  }
+
+  .hero-content h2 {
+    font-size: 2rem;
+  }
 }
