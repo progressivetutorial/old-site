@@ -1,28 +1,24 @@
-// Smooth scroll for internal links
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth'
-      });
+const carousel = document.querySelector('.carousel-track');
+const images = document.querySelectorAll('.carousel-img');
+let currentIndex = 0;
+
+function updateCarousel() {
+  images.forEach((img, index) => {
+    img.classList.remove('active');
+    if (index === currentIndex) {
+      img.classList.add('active');
     }
   });
+}
+
+document.querySelector('.carousel-btn.left').addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  updateCarousel();
 });
 
-// Navbar active link highlight
-const navLinks = document.querySelectorAll('.nav-links a');
-navLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.forEach(l => l.classList.remove('active'));
-    link.classList.add('active');
-  });
+document.querySelector('.carousel-btn.right').addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % images.length;
+  updateCarousel();
 });
 
-// Placeholder for future popup/modal
-window.addEventListener('load', () => {
-  console.log("Page fully loaded. Ready for popup/modal logic.");
-  // You can later show a form or modal here
-  // Example: document.querySelector('.popup').style.display = 'block';
-});
+updateCarousel();
