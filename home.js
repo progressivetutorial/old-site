@@ -1,24 +1,18 @@
-const carousel = document.querySelector('.carousel-track');
-const images = document.querySelectorAll('.carousel-img');
-let currentIndex = 0;
+const track=document.querySelector('.carousel-track');
+const imgs=Array.from(track.children);
+let current=0;
 
-function updateCarousel() {
-  images.forEach((img, index) => {
-    img.classList.remove('active');
-    if (index === currentIndex) {
-      img.classList.add('active');
-    }
-  });
+function update(){
+  imgs.forEach((img,i)=>{img.classList.toggle('active',i===current);});
+  const shift= -current*(imgs[0].getBoundingClientRect().width + 10);
+  track.style.transform=`translateX(${shift}px)`;
 }
 
-document.querySelector('.carousel-btn.left').addEventListener('click', () => {
-  currentIndex = (currentIndex - 1 + images.length) % images.length;
-  updateCarousel();
-});
+document.querySelector('.carousel-btn.left').onclick=()=>{
+  current=(current-1+imgs.length)%imgs.length;update();
+};
+document.querySelector('.carousel-btn.right').onclick=()=>{
+  current=(current+1)%imgs.length;update();
+};
 
-document.querySelector('.carousel-btn.right').addEventListener('click', () => {
-  currentIndex = (currentIndex + 1) % images.length;
-  updateCarousel();
-});
-
-updateCarousel();
+window.addEventListener('load',update);
