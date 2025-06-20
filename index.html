@@ -4,56 +4,69 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Progressive Tutorial</title>
+
   <link rel="stylesheet" href="home.css" />
   <script defer src="home.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <!-- Navbar -->
   <nav class="navbar">
-    <div class="nav-container">
-      <div class="logo">Progressive Tutorial</div>
-      <ul class="nav-links"><li><a href="#" class="active">Home</a></li></ul>
+    <div class="nav-container container">
+      <h1 class="logo">Progressive Tutorial</h1>
+      <ul class="nav-links">
+        <li><a href="home.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </div>
   </nav>
 
-  <!-- Hero -->
-  <div class="hero">
-    <h2>Empowering Students from VI to XII</h2>
-    <p>CBSE | ICSE | CHSE</p>
-  </div>
-
-  <!-- Highlight Cards -->
-  <div class="container cards">
-    <div class="card">Concept Clarity</div>
-    <div class="card">Tricks & Applications</div>
-    <div class="card">One-on-One Doubt Solving</div>
-    <div class="card">Excellent Board Results</div>
-  </div>
-
-  <!-- Carousel -->
-  <div class="carousel-container">
-    <button class="carousel-btn left">&#10094;</button>
-    <div class="carousel-track">
-      <img src="images/class1.jpeg" class="carousel-img" />
-      <img src="images/class2.jpeg" class="carousel-img" />
-      <img src="images/class3.jpeg" class="carousel-img" />
-      <img src="images/class4.jpeg" class="carousel-img" />
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="container">
+      <h2>Empowering Students from VI to XII – CBSE, ICSE, CHSE</h2>
+      <p>Your path to success starts here. Trusted by hundreds of students.</p>
     </div>
-    <button class="carousel-btn right">&#10095;</button>
+  </header>
+
+  <!-- Highlights Section -->
+  <div class="section-box">
+    <div class="container cards">
+      <div class="card">Concept Clarity</div>
+      <div class="card">Tricks & Applications</div>
+      <div class="card">One-on-One Doubt Solving</div>
+      <div class="card">Excellent Board Results</div>
+    </div>
   </div>
 
-  <!-- Contact -->
-  <div class="container contact-card">
+  <!-- Gallery Carousel Section -->
+  <div class="section-box">
+    <div class="carousel-container">
+      <button class="carousel-btn left" onclick="moveSlide(-1)">‹</button>
+      <div class="carousel-track" id="carouselTrack">
+        <img src="images/class1.jpeg" class="carousel-img active" alt="Classroom View 1" />
+        <img src="images/class2.jpeg" class="carousel-img" alt="Classroom View 2" />
+        <img src="images/class3.jpeg" class="carousel-img" alt="Classroom View 3" />
+        <img src="images/class4.jpeg" class="carousel-img" alt="Classroom View 4" />
+      </div>
+      <button class="carousel-btn right" onclick="moveSlide(1)">›</button>
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <div class="section-box contact-card">
     <h3>Contact Us</h3>
-    <p>📞 <a href="tel:+919556544413">9556544413</a></p>
-    <p>📍 Plot No. GA‑174, Near KV4 School, Chandrasekharpur, BBSR</p>
+    <p><strong>Phone:</strong> <a href="tel:+919556544413">9556544413</a></p>
+    <p><strong>WhatsApp:</strong> <a href="https://wa.me/919556544413" target="_blank">Message on WhatsApp</a></p>
+    <p><strong>Location:</strong> Plot No. GA-174, Near KV4 School, Niladri Vihar, Chandrasekharpur, Bhubaneswar</p>
   </div>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Progressive Tutorial</p>
+    <p>&copy; 2025 Progressive Tutorial. Built by Shadab</p>
   </footer>
+
 </body>
 </html>
