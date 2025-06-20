@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Progressive Tutorial</title>
+
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -11,41 +12,51 @@
 <body>
   <!-- Navbar -->
   <nav class="navbar">
-    <div class="container nav-container">
+    <div class="nav-container container">
       <h1 class="logo">Progressive Tutorial</h1>
       <ul class="nav-links">
         <li><a href="#">Home</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="hamburger">
-        <span></span><span></span><span></span>
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </div>
   </nav>
 
   <!-- Hero Section -->
   <section class="hero">
-    <h2>Empowering Students from VI to XII</h2>
-    <p>Achieve excellence with one-on-one guidance and powerful concepts.</p>
+    <div class="container">
+      <h2>Empowering Students from VI to XII</h2>
+      <p>Achieve excellence with one-on-one guidance and powerful concepts.</p>
+    </div>
   </section>
 
-  <!-- What to Expect Section -->
+  <!-- Why Choose Section -->
   <section class="expect">
     <div class="container">
       <h2>Why Choose Progressive Tutorial?</h2>
-      <p class="intro">Where results meet guidance — your trusted companion in academic excellence.</p>
-      <p>Progressive Tutorial is a result-oriented institution offering specialized coaching for students of classes VI to XII across CBSE, ICSE, and CHSE boards. We focus on core subjects like Science, Maths, English, and SST for secondary classes, and Maths, Physics, and Chemistry for senior secondary.</p>
-      <p>Most students struggle with conceptual clarity or lack knowledge of practical tricks and their applications. Our step-by-step learning model and one-on-one interaction help clear doubts efficiently.</p>
-      <p>The consistent board success over the past five years is a direct result of our unique and non-conventional teaching methods.</p>
+      <p class="intro">We focus on key academic needs through personalized teaching.</p>
+      <div class="box-wrapper">
+        <div class="info-box">
+          <p>We offer coaching for students of classes VI to XII (CBSE, ICSE, CHSE) in core subjects like Science, Maths, English, and SST.</p>
+        </div>
+        <div class="info-box">
+          <p>Our step-by-step method with one-on-one support helps students clarify doubts effectively and build strong fundamentals.</p>
+        </div>
+        <div class="info-box">
+          <p>Progressive Tutorial’s consistent board success is the result of practical and non-conventional teaching techniques.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2025 Progressive Tutorial. All rights reserved.</p>
-      <p>Site by Shadab</p>
-    </div>
+  <footer class="footer" id="contact">
+    <p>&copy; 2025 Progressive Tutorial. All rights reserved.</p>
+    <p>Site by Shadab</p>
   </footer>
 </body>
 </html>
