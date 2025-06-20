@@ -1,124 +1,93 @@
-/* Reset and Base Styles */
+/* Reset + Base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: 'Inter', sans-serif;
+  background: #fdfdfd;
+  color: #1a1a1a;
   line-height: 1.6;
-  background: linear-gradient(to bottom, #eaf6ff, #ffffff);
-  color: #222;
-}
-
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
 }
 
 /* Navbar */
 .navbar {
-  background-color: #1c3f94;
-  padding: 1rem 0;
+  background-color: #1d4ed8;
   color: white;
+  padding: 0.75rem 1.5rem;
 }
-
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
 }
-
-.nav-links li a {
-  text-decoration: none;
+.nav-links a {
   color: white;
-  font-weight: 500;
-  transition: color 0.3s ease;
+  text-decoration: none;
+  font-size: 1rem;
 }
-
-.nav-links li a:hover {
-  color: #b3d4fc;
-}
-
-/* Hero Section */
-.hero {
-  height: 75vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem;
-  background: linear-gradient(to bottom, #eaf6ff, #ffffff);
-}
-
-.hero h1 {
-  font-size: 2rem;
+.logo {
+  font-size: 1.25rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
 }
 
-.hero p {
-  font-weight: 300;
+/* Hero */
+.hero {
+  background: linear-gradient(to bottom, #eaf4ff, #ffffff);
+  padding: 5rem 1rem;
+  text-align: center;
+}
+.hero-content h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+.hero-content p {
+  font-size: 1rem;
   color: #444;
-  max-width: 600px;
-  margin: auto;
+  font-weight: 300;
 }
 
 /* Why Choose Section */
 .why-choose {
-  background-color: #f6f7f9;
+  display: flex;
+  justify-content: center;
   padding: 3rem 1rem;
-  text-align: center;
 }
-
-.why-choose h2 {
-  font-size: 1.8rem;
+.why-box {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 800px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+.why-box h3 {
+  font-size: 1.4rem;
   font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.why-box .subtitle {
+  font-size: 1rem;
+  color: #4b5563;
   margin-bottom: 1rem;
 }
-
-.why-choose p.intro {
-  font-size: 1rem;
-  color: #666;
-  margin-bottom: 2rem;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.why-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-
-.why-card {
-  background-color: white;
-  border-radius: 10px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  text-align: left;
-}
-
-.why-card p {
-  font-weight: 300;
+.why-box p {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
   color: #333;
 }
 
 /* Footer */
 footer {
   background-color: #f4ece1;
-  padding: 1rem 0;
   text-align: center;
+  padding: 1.5rem 1rem;
   font-size: 0.9rem;
   color: #333;
-  margin-top: 3rem;
 }
