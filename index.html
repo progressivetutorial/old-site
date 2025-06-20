@@ -2,94 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Progressive Tutorial</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pVvjvN1R4XuR7rMjwN+U2g3CQ7Qy4VtGgiO1rLU0ePMskc+acMRQwhKU5rOEvgoKp9a7XJ+LQ0V0s3Z/8t4r6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="home.css" />
+  <link rel="stylesheet" href="style.css"/>
+  <script defer src="script.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Scroll To Top Button -->
-  <button id="scrollToTop" title="Go to top"><i class="fas fa-chevron-up"></i></button>
 
   <!-- Navbar -->
   <nav class="navbar">
-    <div class="container">
+    <div class="nav-container">
       <div class="logo">Progressive Tutorial</div>
-      <ul class="nav-links">
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#expect">What to Expect</a></li>
-        <li><a href="#features">Core Features</a></li>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#">Home</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <div class="hamburger" id="hamburger">&#9776;</div>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <header id="hero">
+  <header class="hero">
     <div class="hero-content">
-      <h1>Empowering Students</h1>
-      <p>Classes VI to XII – CBSE, ICSE, CHSE</p>
+      <h1>Empowering Students from VI to XII</h1>
+      <p>Achieve excellence with one-on-one guidance and powerful concepts.</p>
     </div>
   </header>
 
-  <!-- What To Expect Section -->
-  <section id="expect">
-    <div class="container expect-flex">
-      <div class="expect-text">
-        <h2>What to Expect</h2>
-        <ul>
-          <li>Personalized Attention</li>
-          <li>Concept-Based Learning</li>
-          <li>Exam-Oriented Preparation</li>
-          <li>One-on-One Doubt Sessions</li>
-        </ul>
-      </div>
-      <div class="expect-image">
-        <img src="images/class1.jpeg" alt="Learning Environment">
-      </div>
-    </div>
-  </section>
-
-  <!-- Core Features Section -->
-  <section id="features">
-    <div class="container features-grid">
-      <div class="feature-card">Concept Clarity</div>
-      <div class="feature-card">Tricks & Applications</div>
-      <div class="feature-card">One-on-One Doubt Solving</div>
-      <div class="feature-card">Excellent Board Results</div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact">
-    <div class="container contact-box">
-      <h2>Contact Us</h2>
-      <p><strong>Phone:</strong> <a href="tel:+919556544413">9556544413</a></p>
-      <p><strong>WhatsApp:</strong> <a href="https://wa.me/919556544413" target="_blank">Message on WhatsApp</a></p>
-      <p><strong>Location:</strong> Plot No. GA-174, Near KV4 School, Niladri Vihar, Chandrasekharpur, Bhubaneswar</p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Progressive Tutorial. Built by Shadab.</p>
-    </div>
-  </footer>
-
-  <script>
-    const scrollToTopBtn = document.getElementById("scrollToTop");
-    window.onscroll = function () {
-      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        scrollToTopBtn.style.display = "block";
-      } else {
-        scrollToTopBtn.style.display = "none";
-      }
-    };
-    scrollToTopBtn.addEventListener("click", function () {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  </script>
 </body>
 </html>
