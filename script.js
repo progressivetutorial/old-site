@@ -1,52 +1,61 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const popup = document.getElementById("popupOverlay");
-  const closeBtn = document.getElementById("popupClose");
+  const enquiryPopup = document.getElementById("enquiryPopup");
+  const closeBtn = document.getElementById("closeEnquiry");
+  const scrollBtn = document.getElementById("scrollToTopBtn");
   const enquiryForm = document.getElementById("enquiryForm");
 
-  // Show the popup after a short delay
-  setTimeout(() => {
-    popup.style.display = "flex";
-    document.body.classList.add("lock-scroll");
-  }, 500);
+  // Show popup on page load
+  enquiryPopup.style.display = "flex";
+  document.body.style.overflow = "hidden"; // Disable scroll when popup is active
 
-  // Close popup on X click
+  // Close popup
   closeBtn.addEventListener("click", () => {
-    popup.style.display = "none";
-    document.body.classList.remove("lock-scroll");
+    enquiryPopup.style.display = "none";
+    document.body.style.overflow = "auto"; // Re-enable scroll
   });
 
-  // Handle form submission
-  enquiryForm.addEventListener("submit", function (e) {
-    e.preventDefault(); // Prevent page reload
+  // Scroll-to-top button logic
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 100) {
+      scrollBtn.style.display = "block";
+    } else {
+      scrollBtn.style.display = "none";
+    }
+  });
+
+  scrollBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  // Handle form submission with Formspree via AJAX
+  enquiryForm.addEventListener("submit", async function (e) {
+    e.preventDefault();
 
     const formData = new FormData(enquiryForm);
-    fetch("https://formspree.io/f/meoklrww", {
-      method: "POST",
-      body: formData,
-      headers: {
-        Accept: "application/json",
-      },
-    })
-      .then(response => {
-        if (response.ok) {
-          // Fade out the popup
-          popup.style.transition = "opacity 0.5s ease";
-          popup.style.opacity = 0;
+    const plainFormData = Object.fromEntries(formData.entries());
+    const jsonData = JSON.stringify(plainFormData);
 
-          setTimeout(() => {
-            popup.style.display = "none";
-            popup.style.opacity = 1;
-            document.body.classList.remove("lock-scroll");
-            enquiryForm.reset();
-            alert("Thank you! We'll get back to you soon.");
-          }, 500);
-        } else {
-          alert("Oops! Something went wrong.");
-        }
-      })
-      .catch(error => {
-        console.error("Error:", error);
-        alert("Failed to send. Please try again.");
+    try {
+      const response = await fetch("https://formspree.io/f/meoklrww", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: jsonData
       });
+
+      if (response.ok) {
+        alert("Thank you! Your message has been sent.");
+        enquiryPopup.style.display = "none";
+        document.body.style.overflow = "auto";
+        enquiryForm.reset();
+      } else {
+        alert("Oops! Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      alert("There was an error submitting the form.");
+      console.error(error);
+    }
   });
 });
