@@ -109,17 +109,17 @@
   <button id="scrollToTopBtn" title="Go to top">↑</button>
 
 
-  <!-- Enquiry Popup Form -->
-<div id="enquiry-popup" class="popup-overlay">
-  <div class="popup-form glass">
-    <h3>📋 Enquiry Form</h3>
+<!-- Enquiry Form Popup -->
+<div class="enquiry-popup" id="enquiryPopup">
+  <div class="enquiry-box">
+    <button class="close-btn" id="closeEnquiry">&times;</button>
+    <h3>Enquire Now</h3>
     <form action="https://formspree.io/f/meoklrww" method="POST">
       <input type="text" name="name" placeholder="Your Name" required>
-      <input type="tel" name="phone" placeholder="Phone Number" required>
-      <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
-      <button type="submit">Submit</button>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
     </form>
-    <span class="close-btn" id="closePopup">&times;</span>
   </div>
 </div>
 
