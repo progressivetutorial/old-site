@@ -401,3 +401,7 @@ footer p {
     display: flex;
   }
 }
+/* Disable background scroll when popup is open */
+body.lock-scroll {
+  overflow: hidden;
+}
