@@ -14,6 +14,25 @@ html {
   scroll-behavior: smooth;
 }
 
+#scrollToTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 999;
+  background-color: #1d4ed8;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s;
+}
+#scrollToTopBtn:hover {
+  background-color: #2563eb;
+}
 
 /* Hamburger menu for mobile */
 .menu-toggle {
