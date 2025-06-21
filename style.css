@@ -129,10 +129,13 @@ footer p {
 
 .why-choose {
   display: flex;
-  justify-content: center;
+  flex-direction: column; /* add this */
+  align-items: center;     /* add this */
+  text-align: center;      /* add this */
   padding: 3rem 1rem;
   background-color: rgb(213, 232, 240);
 }
+
 
 .why-choose h3 {
   font-size: 1.5rem;
