@@ -1,11 +1,24 @@
-function toggleMenu() {
-  const nav = document.getElementById('navLinks');
-  nav.classList.toggle('show');
-}
-// script.js
-const menuToggle = document.getElementById('mobile-menu');
-const navLinks = document.querySelector('.nav-links');
+document.addEventListener("DOMContentLoaded", function () {
+  const toggle = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
 
-menuToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
+  toggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+
+  // Optional: Scroll-to-top button functionality
+  const scrollBtn = document.getElementById("scrollToTopBtn");
+  if (scrollBtn) {
+    window.addEventListener("scroll", () => {
+      if (window.pageYOffset > 300) {
+        scrollBtn.style.display = "block";
+      } else {
+        scrollBtn.style.display = "none";
+      }
+    });
+
+    scrollBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
 });
