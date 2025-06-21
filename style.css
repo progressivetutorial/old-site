@@ -14,7 +14,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Scroll To Top Button */
 #scrollToTopBtn {
   display: none;
   position: fixed;
@@ -34,35 +33,52 @@ html {
 #scrollToTopBtn:hover {
   background-color: #2563eb;
 }
+/* features */
 
-/* Navbar */
-.navbar {
-  background-color: skyblue;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-.nav-container {
+.features-section {
+  background-color: #ffffff;
+  padding: 3rem 1rem;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
 }
-.logo {
-  font-size: 1.25rem;
+
+.features-box {
+  max-width: 1000px;
+  text-align: center;
+}
+
+.features-box h3 {
+  font-size: 1.4rem;
   font-weight: 600;
+  margin-bottom: 0.5rem;
 }
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-}
-.nav-links a {
-  color: white;
-  text-decoration: none;
+
+.features-box .subtitle {
   font-size: 1rem;
+  color: #4b5563;
+  margin-bottom: 2rem;
 }
+
+.features-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.feature-item {
+  background-color: #f0f4f8;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  font-size: 0.95rem;
+  color: #333;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  flex: 1 1 250px;
+  max-width: 300px;
+}
+
+
+/* Hamburger menu for mobile */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -75,31 +91,14 @@ html {
   margin: 4px 0;
   transition: 0.3s;
 }
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: skyblue;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    padding: 1rem;
-    width: 100%;
-  }
-  .nav-links.active {
-    display: flex;
-  }
-  .menu-toggle {
-    display: flex;
-  }
-}
 
 /* Hero */
 .hero {
   background-color: rgb(190, 238, 250);
-  padding: 5rem 1rem 6rem;
+  padding: 5rem 1rem 6rem; /* Added more bottom padding */
   text-align: center;
 }
+
 .hero-content h2 {
   font-size: 1.75rem;
   margin-bottom: 1rem;
@@ -110,14 +109,31 @@ html {
   color: #444;
   font-weight: 300;
 }
+/* footer */
 
-/* Why Choose Section */
+footer {
+  background-color: #f4ece1; /* Light brown shade */
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.95rem;
+  color: #333;
+  margin-top: 3rem;
+  border-top: 1px solid #ddd;
+}
+
+footer p {
+  margin: 0;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
 .why-choose {
   display: flex;
   justify-content: center;
   padding: 3rem 1rem;
   background-color: rgb(213, 232, 240);
 }
+
 .why-choose h3 {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
@@ -148,56 +164,72 @@ html {
   line-height: 1.6;
 }
 
-/* Features Section */
-.features-section {
-  background-color: #ffffff;
-  padding: 3rem 1rem;
-  display: flex;
-  justify-content: center;
-}
-.features-box {
-  max-width: 1000px;
-  text-align: center;
-}
-.features-box h3 {
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-.features-box .subtitle {
-  font-size: 1rem;
-  color: #4b5563;
-  margin-bottom: 2rem;
-}
-.features-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-}
-.feature-item {
-  background-color: #f0f4f8;
-  border-radius: 12px;
-  padding: 1rem 1.5rem;
-  font-size: 0.95rem;
-  color: #333;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  flex: 1 1 250px;
-  max-width: 300px;
+.navbar {
+  background-color: skyblue;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-/* Footer */
-footer {
-  background-color: #f4ece1;
-  text-align: center;
-  padding: 1.5rem 1rem;
-  font-size: 0.95rem;
-  color: #333;
-  margin-top: 3rem;
-  border-top: 1px solid #ddd;
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-footer p {
-  margin: 0;
-  line-height: 1.6;
-  font-weight: 400;
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* Main nav links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+/* Hamburger */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  height: 3px;
+  width: 25px;
+  background: white;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+/* Responsive navbar */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: skyblue;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
 }
