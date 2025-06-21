@@ -21,15 +21,13 @@ menuToggle.addEventListener("click", () => {
   navLinks.classList.toggle("active");
 });
 
-// Enquiry Popup Show on Load
+// Show popup on load
 window.addEventListener("load", () => {
   const popup = document.getElementById("enquiryPopup");
-  if (popup) {
-    popup.style.display = "flex";
-  }
+  if (popup) popup.style.display = "flex";
 });
 
-// Close Popup on Click
+// Close popup on clicking X
 document.addEventListener("DOMContentLoaded", () => {
   const closeBtn = document.querySelector(".close-btn");
   if (closeBtn) {
